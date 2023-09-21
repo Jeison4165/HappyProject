@@ -1,1 +1,1 @@
-# HappyProject
+# FrontCurriculum
