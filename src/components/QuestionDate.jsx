@@ -20,17 +20,17 @@ export const QuestionDate = ({setQuestionCorrect, setNiceMessage}) => {
 
     const [selectedDate, setSelectedDate] = useState(null);
     const handleDateChange = (date) => {
-        // if (date && (date.toDateString() === optionOne.toDateString() || 
-        //     date.toDateString() === optionTwo.toDateString() ) ) {
-        //     setSelectedDate(date)
-        //     setQuestionCorrect(true)
-        //     setNiceMessage(true)
-        // }else{
-        //     setIsCorrect(false)
-        //     setRandomEmoji(Math.floor(Math.random() * 4))
-        // }
-        setQuestionCorrect(true)
-        setNiceMessage(true)
+        if (date && (date.toDateString() === optionOne.toDateString() || 
+            date.toDateString() === optionTwo.toDateString() ) ) {
+            setSelectedDate(date)
+            setQuestionCorrect(true)
+            setNiceMessage(true)
+        }else{
+            setIsCorrect(false)
+            setRandomEmoji(Math.floor(Math.random() * 4))
+        }
+        // setQuestionCorrect(true)
+        // setNiceMessage(true)
     };
 
     return (
