@@ -1,0 +1,19 @@
+.main_container_letter {
+    width: 90%;
+    max-width: 400px;
+    height: 95%; /* Establece la altura deseada del div */
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: hidden; /* Oculta el contenido que excede los límites del div */
+}
+
+.scrollable-content {
+    padding: 20px;
+    overflow-y: scroll; /* Agrega una barra de desplazamiento vertical cuando el contenido excede la altura */
+    height: 100%; /* Ocupa todo el espacio vertical dentro del div */
+}

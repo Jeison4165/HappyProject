@@ -1,40 +1,37 @@
-import '../styles/General.scss'
-import { Header } from "../components/Header"
-import { Hero } from "../components/Hero"
-import { About } from '../components/About'
-import { Skills } from '../components/Skills'
-import { Resume } from '../components/Resume'
-import { Portfolio } from '../components/Portfolio'
-import { Services } from '../components/Services'
-import { Testimonials } from '../components/Testimonials'
-import { Contact } from '../components/Contact'
-import { BackTop } from '../components/BackTop'
-import { MobileNavToggle } from '../components/MobileNavToggle'
-import { ButtonSideProvider } from '../context/ButtonSideContext'
-import { ButtonChangeLanguage } from '../components/ButtonChangeLanguage'
-import { LanguageProvider } from '../context/LanguageContext'
+import { useState } from "react"
+import { Background } from "../components/Background"
+import { QuestionDate } from "../components/QuestionDate"
+import { NiceMessage } from "../components/NiceMessage"
+import { LetterMessage } from "../components/LetterMessage"
 
 export const Index = () => {
+    const [questionCorrect, setQuestionCorrect] = useState(false)
+    const [niceMessage, setNiceMessage] = useState(false)
+    const [letterMessage, setLetterMessage] = useState(false)
+
     return (
-        <LanguageProvider>
-            <ButtonChangeLanguage/>
-            <ButtonSideProvider>
-                <MobileNavToggle></MobileNavToggle>
-                <Header></Header>
-            </ButtonSideProvider>
-            <Hero></Hero>
-            <main id="main">
-                <About></About>
-                {/* <Facts></Facts> */}
-                <Skills></Skills>
-                <Resume></Resume>
-                {/* <Portfolio></Portfolio> */}
-                <Services></Services>
-                {/* <Testimonials></Testimonials>
-                <Contact></Contact> */}
-            </main>
-            {/* <Footer></Footer> */}
-            <BackTop></BackTop>
-        </LanguageProvider>
+        <>
+            <Background></Background>
+            { ! questionCorrect ?
+                <>
+                    <QuestionDate
+                        setQuestionCorrect = {setQuestionCorrect}
+                        setNiceMessage = {setNiceMessage}
+                    />
+                </>
+            : null}
+            { niceMessage ? 
+                <NiceMessage
+                    setNiceMessage = {setNiceMessage}
+                    setLetterMessage = {setLetterMessage}
+                />
+            : null
+            }
+            {letterMessage ? 
+                <LetterMessage
+                />
+            : null
+            }
+        </>
     )
 }

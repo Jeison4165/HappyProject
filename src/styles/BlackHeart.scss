@@ -1,0 +1,21 @@
+
+
+
+
+.main_container {
+    width: 70%; /* Ancho del div en relación al ancho del viewport */
+    max-width: 400px; /* Ancho máximo para evitar que el div se vuelva demasiado ancho en pantallas grandes */
+    height: auto; /* Altura automática para ajustarse al contenido */
+    background: linear-gradient(45deg, #ffffff, #f0f0f0); /* Fondo degradado */
+    border-radius: 10px; /* Bordes redondeados */
+    position: absolute;
+    top: 50%; /* Coloca el div en la mitad vertical */
+    left: 50%; /* Coloca el div en la mitad horizontal */
+    transform: translate(-50%, -50%); /* Centrar el div */
+    text-align: center; /* Centrar el texto dentro del div */
+    padding: 20px; /* Espaciado interno para el contenido */
+}
+
+.heart_black{
+    font-size: 40px;
+}
